@@ -38,9 +38,9 @@ Es una librería que permite consultar los estados de los puertos del Arduino.
 
 ## Instalacion SerialDataPorts
 
-Acceder a la página oficial de Arduino, para descargar el entorno de programación.
+- Acceder a la página oficial de Arduino, para descargar el entorno de programación. https://www.arduino.cc/en/Main/Software
 
-https://www.arduino.cc/en/Main/Software
+- Para instalar una librería: https://www.arduino.cc/en/Guide/Libraries
 
 ### Instalacion Casos Especiales
 
@@ -50,19 +50,35 @@ https://www.youtube.com/watch?v=HPumk8_aqA0
 
 #### Windows
 
-Acceder a la página oficial de Arduino
+Acceder a la página oficial de Arduino (IDE)
 https://www.arduino.cc/en/Main/Software
+
+Instalación Manual en el directorio.
+```
+  My Documents\Arduino\libraries\SerialDataPorts\SerialDataPorts.cpp
+  My Documents\Arduino\libraries\SerialDataPorts\SerialDataPorts.h
+  My Documents\Arduino\libraries\SerialDataPorts\examples
+```
 
 #### Mac OS X
 
+Acceder a la página oficial de Arduino (IDE)
 https://www.arduino.cc/en/Guide/MacOSX
 
-#### Ubuntu Linux
+Instalación Manual en el directorio.
+```
+  Documents/Arduino/libraries/SerialDataPorts/SerialDataPorts.cpp
+  Documents/Arduino/libraries/SerialDataPorts/SerialDataPorts.h
+  Documents/Arduino/libraries/SerialDataPorts/examples
+```
 
+#### Ubuntu Linux
+Acceder a la página oficial de Arduino (IDE)
 http://playground.arduino.cc/Linux/Ubuntu
 
 #### Raspberry Pi Linux
-Terminal
+
+Terminal (IDE)
 ```
 sudo apt-get install arduino
 ```
