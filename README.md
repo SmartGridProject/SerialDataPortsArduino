@@ -42,6 +42,8 @@ Es una librería que permite consultar los estados de los puertos del Arduino.
 
 - Para instalar una librería: https://www.arduino.cc/en/Guide/Libraries
 
+- Para Instalar nuestra librería: https://www.youtube.com/watch?v=FEcDAiug6UE 
+
 ### Instalacion Casos Especiales
 
 Para ver el funcionamiento de la librería acceder a:
