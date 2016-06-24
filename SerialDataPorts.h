@@ -1,17 +1,19 @@
 /*
-  Blink.h - Descripción de la librería
-Creada por Nombre Autor, Fecha
-Lanzado bajo licencia ---
+  SerialDataPorts.h - Esta libreria permite crear tramas
+  de los estados logicos de las entradas y salidas del Arduino.
+Creada por Mauricio Duque Orozco, 06/06/2016
+Lanzado bajo licencia MIT
 */
 #ifndef SerialDataPorts_h
 #define SerialDataPorts_h
 #include "arduino.h"
+
 class SerialDataPorts {
   public:
    SerialDataPorts(int pin);
-   String parpadeo();
+   String trama();
   private:
-    // Phisical Inputs
+    // Entradas fisicas
     int _pin;
     int _pin_8;
     int _pin_9;
@@ -20,7 +22,7 @@ class SerialDataPorts {
     int _pin_12;
     //int _pin_13;
 
-    // Phisical Outputs
+    // Salidas fisicas
     int _pin_2;
     int _pin_3;
     int _pin_4;
@@ -28,7 +30,7 @@ class SerialDataPorts {
     int _pin_6;
     int _pin_7;
 
-    // Phisical Analog Inputs
+    // Entradas Analogas
     int _pin_A0;
     int _pin_A1;
     int _pin_A2;

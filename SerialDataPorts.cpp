@@ -1,7 +1,8 @@
 /*
-Libejemplo.cpp -Descripción cpp
-Creada por Nombre Autor, Fecha
-Lanzado bajo licencia---
+SerialDataPorts.cpp - Esta libreria permite crear tramas
+de los estados logicos de las entradas y salidas del Arduino.
+Creada por Mauricio Duque Orozco, 06/06/2016
+Lanzado bajo licencia MIT
 */
 
 #include "arduino.h"
@@ -37,9 +38,9 @@ SerialDataPorts::SerialDataPorts(int pin)
 
 // funcion principal de la libreria
 
-String SerialDataPorts::parpadeo()
+String SerialDataPorts::trama()
 {
-//código
+//Trama
   String chain = "{E:{I12:" + String(digitalRead(_pin_12)) +
                     ",I11:" + String(digitalRead(_pin_11)) +
                     ",I10:" + String(digitalRead(_pin_10)) +
