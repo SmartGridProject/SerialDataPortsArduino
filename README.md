@@ -10,36 +10,41 @@ Es una librería que permite consultar los estados de los puertos del Arduino.
 
 ***
 
-* [Platform Support](#platform-support)
-* [Installation SerialDataPorts](#installation-serialdataports)
-* [Installation Special Cases](#installation-special-cases)
+* [Plataformas Soportadas](#plataformas-soportadas)
+* [Instalacion SerialDataPorts](#instalacion-serialdataports)
+* [Instalacion Casos Especiales](#instalacion-casos-especiales)
   * [Windows](#windows)
   * [Mac OS X](#mac-os-x)
   * [Ubuntu Linux](#ubuntu-linux)
   * [Raspberry Pi Linux](#raspberry-pi-linux)
-* [Usage](#usage)
+* [Uso](#uso)
   * [Pinout](#pinout)
   * [Trama Normalizada](#trama-normalizada)
 * [Ejemplo](#ejemplo)
+* [Aclaraciones](#aclaraciones)
 
 ***
-## Platform Support
+## Plataformas Soportadas
 
-**Nota:** Para Arduino Mega  y otros es necesario cambiar la distribución de pines en los archivos: SerialDataPorts.cpp y SerialDataPorts.h
+**Nota:** Para Arduino Mega  y otros es necesario cambiar la distribución de pines en los archivos:
+- SerialDataPorts.cpp
+- SerialDataPorts.h
 
-| Platform / Arch | Version Placa|
+| Platform / Arch | Versión Placa|
 |       ---       | --- |
 | Arduino UNO    |  ☑  |  
 | Arduino Mega   |  ☑  |  
 | Arduino DUE |  ☑  |  
 
-## Installation SerialDataPorts
+## Instalacion SerialDataPorts
 
-Acceder a la página oficial de Arduino.
+Acceder a la página oficial de Arduino, para descargar el entorno de programación.
 
 https://www.arduino.cc/en/Main/Software
 
-### Installation Special Cases
+### Instalacion Casos Especiales
+
+Para ver el funcionamiento de la librería acceder a:
 
 https://www.youtube.com/watch?v=HPumk8_aqA0
 
@@ -57,16 +62,20 @@ https://www.arduino.cc/en/Guide/MacOSX
 http://playground.arduino.cc/Linux/Ubuntu
 
 #### Raspberry Pi Linux
+Terminal
 ```
 sudo apt-get install arduino
 ```
 
-## Usage
+## Uso
 
 
 #### Pinout
 
 Es necesario estandarizar los pines del arduino:
+
+- Los pines del 8 al 12, ***deben estar destinados a "entradas digitales".***
+- Para los pines 2 al 7, ***deben estar destinados a "salidas digitales".***
 
 ```
 // Pinout Inputs
@@ -76,9 +85,8 @@ Es necesario estandarizar los pines del arduino:
   _pin_10 = 10;
   _pin_11 = 11;
   _pin_12 = 12;
-  //_pin_13 = 13;
 
-  // Pinout Outputs
+// Pinout Outputs
   _pin_2 = 2;
   _pin_3 = 3;
   _pin_4 = 4;
@@ -86,7 +94,7 @@ Es necesario estandarizar los pines del arduino:
   _pin_6 = 6;
   _pin_7 = 7;
 
-  // Pinout Analog Inputs
+// Pinout Analog Inputs
   _pin_A0 = A0;
   _pin_A1 = A1;
   _pin_A2 = A2;
@@ -97,6 +105,9 @@ Es necesario estandarizar los pines del arduino:
 ***
 
 #### Trama Normalizada
+
+La trama permite la normalización de los datos provenientes del Arduino.
+
 ```
 {
   E:{           // Estado de las entradas digitales [estados binarios]
@@ -126,6 +137,8 @@ Es necesario estandarizar los pines del arduino:
 }& // Indicador de fin de trama
 ```
 
+**Nota:** Siempre debe ponerse al final de la trama "&" como indicador de final.
+
 ## Ejemplo
 
 Este ejemplo muesta el uso de la librería.
@@ -144,13 +157,13 @@ Este ejemplo muesta el uso de la librería.
     //...
     // Inserta tu código aquí.
     //...
-    Serial.println(sdp.trama());  // Siempre debe de ir despues de un cambio de estado logico.
+    Serial.println(sdp.trama());  // Siempre debe de ir después de un cambio de estado lógico.
   }
 ```
 
 **Nota:** Especial cuidado cuando usa instrucciones como "Delay", pueden provocar
 pérdida de datos, es preferible usar la instruccion `Serial.println(sdp.trama());`
-despues de cada cambio lógico de los puertos
+después de cada cambio lógico de los puertos
 
 ```cpp
 #include <SerialDataPorts.h>
@@ -172,3 +185,12 @@ void loop() {
   Serial.println(sdp.trama());
 }
 ```
+## Aclaraciones
+
+
+- ***La librería solo permite la lectura de los puertos análogos como entradas,
+por el momento no se desarrolla para las entradas análogas***
+
+- ***En futuras versiones se propone ampliar la librería para demás versiones de Arduino***
+
+- ***Para cualquier error por favor consultar o informar a: https://github.com/virtualweblab/SerialDataPortsArduino/issues ***
