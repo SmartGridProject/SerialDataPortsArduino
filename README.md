@@ -6,9 +6,7 @@ Esta libreria comunica tu arduino con VWL.
 
 # SerialDataPortsArduino
 
-Es una libreria que permite consultar los estados de los puertos del Arduino UNO.
-
-**Nota:** Para Arduino Mega  y otros es necesario cambiar la distribucion de pines en los archivos: SerialDataPorts.cpp y SerialDataPorts.h
+Es una libreria que permite consultar los estados de los puertos del Arduino.
 
 ***
 
@@ -19,20 +17,14 @@ Es una libreria que permite consultar los estados de los puertos del Arduino UNO
   * [Mac OS X](#mac-os-x)
   * [Ubuntu Linux](#ubuntu-linux)
   * [Raspberry Pi Linux](#raspberry-pi-linux)
-  * [Illegal Instruction](#illegal-instruction)
 * [Usage](#usage)
-  * [Opening a Port](#opening-a-port)
-  * [Listing Ports](#listing-ports)
-  * [Parsers](#parsers)
-* [Methods](#methods)
-  * [SerialPort](#serialport-path-options-opencallback)
-* [Events](#events)
-* [Command Line Tools](#command-line-tools)
-  * [Serial Port List](#serial-port-list)
-  * [Serial Port Terminal](#serial-port-terminal)
+  * [Pinout](#pinout)
+  * [Trama Normalizada](#trama-normalizada)
 
 ***
 ## Platform Support
+
+**Nota:** Para Arduino Mega  y otros es necesario cambiar la distribucion de pines en los archivos: SerialDataPorts.cpp y SerialDataPorts.h
 
 | Platform / Arch | Version Placa|
 |       ---       | --- |
@@ -67,6 +59,8 @@ sudo apt-get install arduino
 
 ## Usage
 
+
+#### Pinout
 Es necesario estandarizar los pines del arduino:
 
 ```
@@ -97,7 +91,7 @@ Es necesario estandarizar los pines del arduino:
 ```
 ***
 
-## Trama Normalizada
+#### Trama Normalizada
 ```
 {
   E:{           // Estado de las entradas digitales [estados binarios]
