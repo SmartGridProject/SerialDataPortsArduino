@@ -8,18 +8,65 @@ Esta libreria comunica tu arduino con VWL.
 
 Es una libreria que permite consultar los estados de los puertos del Arduino UNO.
 
-***
-  *[Plataformas soportadas](#plataformas)
-  *[Trama Normalizada](#trama)
-  *[Normalizacion de Pines](#normalizacion)
-  *[Plataformas soportadas](#plataformas)
+**Nota:** Para Arduino Mega  y otros es necesario cambiar la distribucion de pines en los archivos: SerialDataPorts.cpp y SerialDataPorts.h
 
 ***
 
-## Plataformas soportadas
+* [Platform Support](#platform-support)
+* [Installation](#installation-instructions)
+* [Installation Special Cases](#installation-special-cases)
+  * [Windows](#windows)
+  * [Mac OS X](#mac-os-x)
+  * [Ubuntu Linux](#ubuntu-linux)
+  * [Raspberry Pi Linux](#raspberry-pi-linux)
+  * [Illegal Instruction](#illegal-instruction)
+* [Usage](#usage)
+  * [Opening a Port](#opening-a-port)
+  * [Listing Ports](#listing-ports)
+  * [Parsers](#parsers)
+* [Methods](#methods)
+  * [SerialPort](#serialport-path-options-opencallback)
+* [Events](#events)
+* [Command Line Tools](#command-line-tools)
+  * [Serial Port List](#serial-port-list)
+  * [Serial Port Terminal](#serial-port-terminal)
 
-## Normalizacion de Pines
 ***
+## Platform Support
+
+| Platform / Arch | Version Placa|
+|       ---       | --- |
+| Arduino UNO    |  ☑  |  
+| Arduino Mega   |  ☑  |  
+| Arduino DUE |  ☑  |  
+
+## Installation Instructions
+
+Acceder a la página oficial de Arduino
+https://www.arduino.cc/en/Main/Software
+
+### Installation Special Cases
+
+#### Windows
+
+Acceder a la página oficial de Arduino
+https://www.arduino.cc/en/Main/Software
+
+#### Mac OS X
+
+https://www.arduino.cc/en/Guide/MacOSX
+
+#### Ubuntu Linux
+
+http://playground.arduino.cc/Linux/Ubuntu
+
+#### Raspberry Pi Linux
+```
+sudo apt-get install arduino
+```
+
+## Usage
+
 Es necesario estandarizar los pines del arduino:
 
 ```
