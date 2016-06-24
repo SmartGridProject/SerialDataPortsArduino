@@ -8,7 +8,21 @@ Esta libreria comunica tu arduino con VWL.
 
 Es una libreria que permite consultar los estados de los puertos del Arduino UNO.
 
+***
+  *[Plataformas soportadas](#plataformas)
+  *[Trama Normalizada](#trama)
+  *[Normalizacion de Pines](#normalizacion)
+  *[Plataformas soportadas](#plataformas)
+
+***
+
+## Plataformas soportadas
+
+## Normalizacion de Pines
+***
 Es necesario estandarizar los pines del arduino:
+
+```
 // Pinout Inputs
   _pin = pin;
   _pin_8 = 8;
@@ -33,10 +47,11 @@ Es necesario estandarizar los pines del arduino:
   _pin_A3 = A3;
   _pin_A4 = A4;
   _pin_A5 = A5;
-
+```
 ***
-# Trama de Salida
 
+## Trama Normalizada
+```
 {
   E:{           // Estado de las entradas digitales [estados binarios]
     I1  : 1,    // Estado de la entrada 1 -> [pin 12]
@@ -63,3 +78,4 @@ Es necesario estandarizar los pines del arduino:
     IA[n]: ..   // Estado de la entrada analoga n -> [pin "n"]
    }
 }& // Indicador de fin de trama
+```
