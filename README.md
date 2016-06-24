@@ -205,8 +205,8 @@ void loop() {
 
 
 - ***La librería solo permite la lectura de los puertos análogos como entradas,
-por el momento no se desarrolla para las entradas análogas***
+por el momento no se desarrolla para las salidas análogas***
 
 - ***En futuras versiones se propone ampliar la librería para demás versiones de Arduino***
 
-- ***Para cualquier error por favor consultar o informar a: https://github.com/virtualweblab/SerialDataPortsArduino/issues ***
+- Para cualquier error por favor consultar o informar a: https://github.com/virtualweblab/SerialDataPortsArduino/issues
