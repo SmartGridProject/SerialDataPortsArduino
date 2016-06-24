@@ -1,17 +1,17 @@
 Libreria-SerialDataPorts-Arduino
 ==========================
 
-Esta libreria comunica tu arduino con VWL.
-***Esta libreria permite consultar el estado de las entradas y salidas para determinar su valor logico y realizar la trama de envio de datos,***
+Esta librería comunica tu arduino con VWL.
+***Esta librería permite consultar el estado de las entradas y salidas para determinar su valor lógico y realizar la trama de envío de datos,***
 
 # SerialDataPortsArduino
 
-Es una libreria que permite consultar los estados de los puertos del Arduino.
+Es una librería que permite consultar los estados de los puertos del Arduino.
 
 ***
 
 * [Platform Support](#platform-support)
-* [Installation](#installation-instructions)
+* [Installation SerialDataPorts](#installation-serialdataports)
 * [Installation Special Cases](#installation-special-cases)
   * [Windows](#windows)
   * [Mac OS X](#mac-os-x)
@@ -20,11 +20,12 @@ Es una libreria que permite consultar los estados de los puertos del Arduino.
 * [Usage](#usage)
   * [Pinout](#pinout)
   * [Trama Normalizada](#trama-normalizada)
+* [Ejemplo](#ejemplo)
 
 ***
 ## Platform Support
 
-**Nota:** Para Arduino Mega  y otros es necesario cambiar la distribucion de pines en los archivos: SerialDataPorts.cpp y SerialDataPorts.h
+**Nota:** Para Arduino Mega  y otros es necesario cambiar la distribución de pines en los archivos: SerialDataPorts.cpp y SerialDataPorts.h
 
 | Platform / Arch | Version Placa|
 |       ---       | --- |
@@ -32,12 +33,15 @@ Es una libreria que permite consultar los estados de los puertos del Arduino.
 | Arduino Mega   |  ☑  |  
 | Arduino DUE |  ☑  |  
 
-## Installation Instructions
+## Installation SerialDataPorts
 
-Acceder a la página oficial de Arduino
+Acceder a la página oficial de Arduino.
+
 https://www.arduino.cc/en/Main/Software
 
 ### Installation Special Cases
+
+https://www.youtube.com/watch?v=HPumk8_aqA0
 
 #### Windows
 
@@ -61,6 +65,7 @@ sudo apt-get install arduino
 
 
 #### Pinout
+
 Es necesario estandarizar los pines del arduino:
 
 ```
@@ -119,4 +124,51 @@ Es necesario estandarizar los pines del arduino:
     IA[n]: ..   // Estado de la entrada analoga n -> [pin "n"]
    }
 }& // Indicador de fin de trama
+```
+
+## Ejemplo
+
+Este ejemplo muesta el uso de la librería.
+
+
+```cpp
+  #include <SerialDataPorts.h>
+
+  SerialDataPorts sdp(13);
+
+  void setup() {
+    Serial.begin(9600);
+  }
+
+  void loop() {
+    //...
+    // Inserta tu código aquí.
+    //...
+    Serial.println(sdp.trama());  // Siempre debe de ir despues de un cambio de estado logico.
+  }
+```
+
+**Nota:** Especial cuidado cuando usa instrucciones como "Delay", pueden provocar
+pérdida de datos, es preferible usar la instruccion `Serial.println(sdp.trama());`
+despues de cada cambio lógico de los puertos
+
+```cpp
+#include <SerialDataPorts.h>
+SerialDataPorts sdp(13);
+
+void setup() {
+
+  Serial.begin(9600);
+  pinMode(12, OUTPUT);
+}
+
+void loop() {
+
+  digitalWrite(12, HIGH);   
+  delay(500);   
+  Serial.println(sdp.trama());  
+  digitalWrite(12, LOW);    
+  delay(500);
+  Serial.println(sdp.trama());
+}
 ```
