@@ -1,11 +1,7 @@
-Libreria-Plantilla-Arduino
+Libreria-SerialDataPorts-Arduino
 ==========================
 
-Librería plantilla para hacer tu propia librería de Arduino.
-***Esta es una librería de ejemplo creada para Arduino, basada en la creada por Nicholas Zambetti para Wiring 006***
-***Para instalar esta librería, descomprimir el archivo en el nuestro sketchbook de Arduino, que podréis comprobar abriendo el IDE de Arduino y en Archivo/Preferencias/***
-***Para comprobar que está correctamente instalada, dentro del IDE de Arduino ir a Sketch/Importar librería y comprobar que aparece "Libejemplo".***
-***Nota importante: está librería no cumple ninguna función, ya que sólo es una plantilla para facilitar el trabajo a los programadores.***
-***La librería ha sido creada por A.Girod, de Opiron Electronics en www.opiron.com****
-***La librería es de dominio público***
+Esta libreria comunica tu arduino con VWL.
+***Esta libreria permite consultar el estado de las entradas y salidas para determinar su valor logico y realizar la trama de envio de datos,***
+***Los datos tienen la siguiente estructura: "{E:{I1:"",I2:1,I3:1},S:{Q1:0,Q2:1},IA:{IA1:444,IA2:0.00}}&"***
 # SerialDataPortsArduino
